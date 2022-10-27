@@ -4,6 +4,7 @@ import Room from '../models/Room.js';
 export const createHotel = async (req, res, next) => {
   const newHotel = new Hotel(req.body);
   //console.log(newHotel);
+  //console.log(req.body);
 
   try {
     const savedHotel = await newHotel.save();
@@ -37,6 +38,7 @@ export const deleteHotel = async (req, res, next) => {
 };
 
 export const getHotel = async (req, res, next) => {
+  //console.log(req.params.id);
   try {
     const hotel = await Hotel.findById(req.params.id);
     res.status(200).json(hotel);
