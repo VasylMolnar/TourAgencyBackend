@@ -7,8 +7,8 @@ export const register = async (req, res, next) => {
   try {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
-
     //console.log(req.body);
+
     const newUser = new User({
       ...req.body,
       password: hash,
@@ -20,7 +20,6 @@ export const register = async (req, res, next) => {
     next(err);
   }
 };
-
 export const login = async (req, res, next) => {
   try {
     const user = await User.findOne({ username: req.body.username });
