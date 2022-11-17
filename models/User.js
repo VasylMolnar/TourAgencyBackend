@@ -34,6 +34,31 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    hotelName: {
+      type: String,
+      required: false,
+      unique: true,
+    },
+    hotelId: {
+      type: String,
+      required: false,
+      unique: true,
+    },
+    roomNumber: {
+      type: String,
+      required: false,
+      unique: true,
+    },
+    endDate: {
+      type: String,
+      required: false,
+      unique: true,
+    },
+    startDate: {
+      type: String,
+      required: false,
+      unique: true,
+    },
   },
   { timestamps: true }
 );
